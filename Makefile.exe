@@ -35,3 +35,7 @@ build/%.o: %.c
 	$(CC) -c -o $@ $<
 
 .PHONY: all clean
+
+check: $(TARGET_BINARY)
+@# Execute binary and verify output, it returns 0 (sucess) or 1(fail)
+["$$($(TARGET_BINARY))"=" Hello World!"]
